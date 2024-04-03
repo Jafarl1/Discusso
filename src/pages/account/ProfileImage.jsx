@@ -58,7 +58,7 @@ function ProfileImage() {
         ) : (
           <img
             src={profileImage || defaultProfileImage}
-            className={styles.profileImgTag}
+            id={styles.profileImgTag}
             alt="Avatar"
           />
         )}

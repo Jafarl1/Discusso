@@ -77,7 +77,7 @@
     .middleContentH2 {
       text-align: center;
       text-transform: capitalize;
-      color: var(--aqua);
+      color: var(--purple);
       margin-bottom: 15px;
     }
   }

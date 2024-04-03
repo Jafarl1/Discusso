@@ -25,3 +25,6 @@ body {
   width: 100%;
   min-height: calc(100vh - 220px);
 }
+li {
+  display: flex;
+}

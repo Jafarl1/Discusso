@@ -1,0 +1,15 @@
+.notFound {
+  width: 100%;
+  height: calc(100vh - 220px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  h2 {
+    font-size: 28px;
+    color: var(--purple);
+    font-weight: 500;
+  }
+}

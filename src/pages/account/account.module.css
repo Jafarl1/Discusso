@@ -1,0 +1,274 @@
+.account {
+  width: 100%;
+  display: flex;
+  padding: 15px 0;
+  gap: 10px;
+
+  .profileImage {
+    width: 250px;
+    height: max-content;
+    box-shadow: 0px 0px 5px 0px #999999;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    input {
+      width: 100%;
+      height: 30px;
+      position: relative;
+      padding: 0 10px;
+      border-radius: 4px;
+      box-shadow: 0px 0px 3px 0px #999999;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "Change profile image";
+        border-radius: 4px;
+        background-color: var(--background);
+        color: var(--purple);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        overflow: hidden;
+        font-size: 1rem;
+        cursor: pointer;
+        z-index: 1;
+      }
+    }
+
+    .profileImageContent {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  .middleContent {
+    border-radius: 4px;
+    box-shadow: 0px 0px 12px 0px inset #d6d6d6;
+    padding: 15px;
+    width: calc(100% - 500px);
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      text-align: center;
+      text-transform: capitalize;
+      color: var(--purple);
+      margin-bottom: 15px;
+    }
+
+    .plansComponent {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .topLineInputs {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+
+        label {
+          width: 50%;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+
+          input {
+            width: 90%;
+            height: 30px;
+            padding: 0 5px;
+            outline: none;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+          }
+
+          button {
+            height: 30px;
+            padding: 2px;
+            border-radius: 4px;
+            background-color: var(--background);
+            cursor: pointer;
+            border: none;
+            outline: none;
+
+            img {
+              height: 100%;
+            }
+          }
+        }
+      }
+
+      .plansContent {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .loadingPlans,
+        .emptyDiv {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 30px;
+          gap: 15px;
+          color: var(--purple);
+
+          img {
+            width: 15%;
+          }
+        }
+
+        .plan {
+          border: 1px solid var(--light-gray);
+          border-radius: 4px;
+          padding: 8px;
+          position: relative;
+          overflow: hidden;
+
+          .planBody {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5px;
+
+            .planBodyText {
+              width: 80%;
+              display: flex;
+              align-items: center;
+              gap: 5px;
+            }
+
+            .planContent {
+              display: flex;
+              flex-wrap: wrap;
+              overflow-x: hidden;
+            }
+
+            small {
+              font-style: italic;
+              opacity: 0.7;
+              margin-left: 5px;
+            }
+
+            .contentBtns {
+              display: flex;
+              gap: 6px;
+
+              button {
+                width: 30px;
+                height: 30px;
+                border: none;
+                outline: none;
+                background-color: var(--background);
+                box-shadow: 0px 0px 3px 0px var(--light-gray);
+                border-radius: 3px;
+                cursor: pointer;
+
+                img {
+                  width: 100%;
+                  padding: 6px;
+                }
+              }
+            }
+          }
+
+          hr {
+            margin: 10px 0 5px;
+            opacity: 0.3;
+          }
+
+          .addedData {
+            display: flex;
+            justify-content: end;
+            padding: 0 5px;
+            font-size: 0.8rem;
+          }
+
+          .editPlanModal {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+            input {
+              width: 80%;
+              height: 40%;
+              border-radius: 4px;
+              border: 1px solid var(--light-gray);
+              background-color: var(--background);
+              outline: none;
+              padding: 5px;
+            }
+
+            .editBtns {
+              display: flex;
+              gap: 10px;
+
+              button {
+                padding: 2px 20px;
+                outline: none;
+                color: var(--purple);
+                border: 1px solid var(--light-gray);
+                border-radius: 3px;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar {
+    width: 250px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    li {
+      width: 100%;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--purple);
+      border-radius: 4px;
+      box-shadow: 0px 0px 3px 0px var(--light-gray);
+      cursor: pointer;
+      text-transform: capitalize;
+    }
+  }
+}

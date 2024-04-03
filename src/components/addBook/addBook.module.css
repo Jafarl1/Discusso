@@ -1,0 +1,62 @@
+.addBook {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .bookDetails {
+    width: 500px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 15px;
+
+    .topLine {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      margin-bottom: 10px;
+
+      .closeModal {
+        width: 35px;
+        height: 35px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      label {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 5px;
+      }
+
+      input,
+      textarea {
+        outline: none;
+        padding: 5px;
+      }
+
+      button {
+        width: 150px;
+        height: 40px;
+        margin: 15px;
+      }
+    }
+  }
+}

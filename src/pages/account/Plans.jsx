@@ -108,20 +108,24 @@ function Plans() {
   return (
     <div className={styles.plansComponent}>
       <div className={styles.topLineInputs}>
-        <label>
+        <label className={styles.topLineLabel}>
           <input
             type="text"
             id="addPlan"
             placeholder="Add new plan"
+            className={styles.topLineInput}
             value={newPlan}
             onChange={(e) => setNewPlan(e.target.value)}
             onKeyDown={(e) => handleKeyPress(e, "Enter", addNewPlan)}
           />
-          <button onClick={addNewPlan}>
-            <img src={addIcon} alt="Add plan" />
+          <button className={styles.addPlanBtn} onClick={addNewPlan}>
+            <img src={addIcon} className={styles.addPlanIcon} alt="Add plan" />
           </button>
         </label>
-        <label style={{ justifyContent: "end" }}>
+        <label
+          className={styles.topLineLabel}
+          style={{ justifyContent: "end" }}
+        >
           <input
             type="search"
             name="search"

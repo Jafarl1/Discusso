@@ -24,36 +24,60 @@ function Navbar() {
     <Loader />
   ) : (
     <nav className={styles.navbar}>
-      <ul>
-        <li>
-          <NavLink to="/">Home</NavLink>
+      <ul className={styles.navbarUl}>
+        <li className={styles.navbarLi}>
+          <NavLink to="/" className={styles.navLink}>
+            Home
+          </NavLink>
         </li>
-        <li>
-          <NavLink to="/about">About</NavLink>
+        <li className={styles.navbarLi}>
+          <NavLink to="/about" className={styles.navLink}>
+            About
+          </NavLink>
         </li>
         {userLoggedIn ? (
           <>
-            <li>
-              <NavLink to="/account">
-                <img src={userIcon} alt="Account" />
+            <li className={styles.navbarLi}>
+              <NavLink to="/account" className={styles.navLink}>
+                <img
+                  src={userIcon}
+                  className={styles.navLinkImg}
+                  alt="Account"
+                />
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/signin" onClick={signOut}>
-                <img src={signOutIcon} alt="Sign out" />
+            <li className={styles.navbarLi}>
+              <NavLink
+                to="/signin"
+                className={styles.navLink}
+                onClick={signOut}
+              >
+                <img
+                  src={signOutIcon}
+                  className={styles.navLinkImg}
+                  alt="Sign out"
+                />
               </NavLink>
             </li>
           </>
         ) : (
           <>
-            <li>
-              <NavLink to="/signin">
-                <img src={signInIcon} alt="Sign in" />
+            <li className={styles.navbarLi}>
+              <NavLink to="/signin" className={styles.navLink}>
+                <img
+                  src={signInIcon}
+                  className={styles.navLinkImg}
+                  alt="Sign in"
+                />
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/signup">
-                <img src={signUpIcon} alt="Sign up" />
+            <li className={styles.navbarLi}>
+              <NavLink to="/signup" className={styles.navLink}>
+                <img
+                  src={signUpIcon}
+                  className={styles.navLinkImg}
+                  alt="Sign up"
+                />
               </NavLink>
             </li>
           </>

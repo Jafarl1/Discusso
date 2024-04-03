@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { handleKeyPress } from "../../utils/utils";
-import doneIcon from "../../assets/icons/done-icon.png";
-import editIcon from "../../assets/icons/edit-icon.png";
-import deleteIcon from "../../assets/icons/delete-icon.png";
-import undoneIcon from "../../assets/icons/sandglass-icon.png";
+import { handleKeyPress } from "../../../utils/utils";
+import doneIcon from "../../../assets/icons/done-icon.png";
+import editIcon from "../../../assets/icons/edit-icon.png";
+import deleteIcon from "../../../assets/icons/delete-icon.png";
+import undoneIcon from "../../../assets/icons/sandglass-icon.png";
 
-import styles from "./account.module.css";
+import styles from "./plans.module.css";
 
 function Plan({ plan, index, setPlanDone, editPlan, deletePlan }) {
   const [editModalOpen, setEditModalOpen] = useState(false);
@@ -43,23 +43,39 @@ function Plan({ plan, index, setPlanDone, editPlan, deletePlan }) {
           >
             {plan.content}
           </span>
-          <small style={{ color: plan.done ? "green" : "red" }}>
+          <small
+            className={styles.smallTag}
+            style={{ color: plan.done ? "green" : "red" }}
+          >
             {plan.done ? "done" : "undone"}
           </small>
         </div>
         <div className={styles.contentBtns}>
-          <button onClick={() => setPlanDone(plan.id)}>
-            <img src={plan.done ? undoneIcon : doneIcon} alt="done" />
+          <button
+            className={styles.planBtn}
+            onClick={() => setPlanDone(plan.id)}
+          >
+            <img
+              className={styles.planBtnImg}
+              src={plan.done ? undoneIcon : doneIcon}
+              alt="done"
+            />
           </button>
-          <button onClick={() => setEditModalOpen((prev) => !prev)}>
-            <img src={editIcon} alt="edit" />
+          <button
+            className={styles.planBtn}
+            onClick={() => setEditModalOpen((prev) => !prev)}
+          >
+            <img className={styles.planBtnImg} src={editIcon} alt="edit" />
           </button>
-          <button onClick={() => deletePlan(plan.id)}>
-            <img src={deleteIcon} alt="delete" />
+          <button
+            className={styles.planBtn}
+            onClick={() => deletePlan(plan.id)}
+          >
+            <img className={styles.planBtnImg} src={deleteIcon} alt="delete" />
           </button>
         </div>
       </div>
-      <hr />
+      <hr className={styles.planHr} />
       <div className={styles.addedData}>
         <small>{plan.added}</small>
       </div>
@@ -70,13 +86,18 @@ function Plan({ plan, index, setPlanDone, editPlan, deletePlan }) {
         <input
           type="text"
           value={editedPlan}
+          className={styles.editPlanInput}
           style={{ borderColor: modalError ? "red" : "var(--light-gray)" }}
           onChange={handleEditInput}
           onKeyDown={(e) => handleKeyPress(e, "Enter", editPlanContent)}
         />
-        <div className={styles.editBtns}>
-          <button onClick={closeEditModal}>Cancel</button>
-          <button onClick={editPlanContent}>Edit plan</button>
+        <div className={styles.editPlanBtns}>
+          <button className={styles.editPlanBtn} onClick={closeEditModal}>
+            Cancel
+          </button>
+          <button className={styles.editPlanBtn} onClick={editPlanContent}>
+            Edit plan
+          </button>
         </div>
       </div>
     </div>

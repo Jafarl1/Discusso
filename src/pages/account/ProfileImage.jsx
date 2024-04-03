@@ -56,13 +56,17 @@ function ProfileImage() {
         {loadingImage ? (
           <RingLoader color="#8c0075" />
         ) : (
-          <img src={profileImage || defaultProfileImage} alt="Avatar" />
+          <img
+            src={profileImage || defaultProfileImage}
+            className={styles.profileImgTag}
+            alt="Avatar"
+          />
         )}
       </div>
       <input
         type="file"
         name="profile_image"
-        id="profile_image"
+        className={styles.uploadImageInput}
         onChange={uploadImagesToCloud}
       />
     </section>

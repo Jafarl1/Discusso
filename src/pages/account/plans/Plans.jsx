@@ -1,14 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
 import { PulseLoader } from "react-spinners";
-import { useAuth } from "../../context/AuthContext";
-import { getUserDataFromDatabase } from "../../firebase/handleDatabaseFiles";
-import { getDatabase, set, ref } from "../../firebase/firebase";
-import { getCurrentTime, handleKeyPress } from "../../utils/utils";
+import { useAuth } from "../../../context/AuthContext";
+import { getUserDataFromDatabase } from "../../../firebase/handleDatabaseFiles";
+import { getDatabase, set, ref } from "../../../firebase/firebase";
+import { getCurrentTime, handleKeyPress } from "../../../utils/utils";
 import Plan from "./Plan";
 
-import addIcon from "../../assets/icons/add-note-icon.png";
-import emptyIcon from "../../assets/icons/empty-icon.png";
-import styles from "./account.module.css";
+import addIcon from "../../../assets/icons/add-note-icon.png";
+import emptyIcon from "../../../assets/icons/empty-icon.png";
+import styles from "./plans.module.css";
 
 function Plans() {
   const { currentUser } = useAuth();
@@ -111,9 +111,8 @@ function Plans() {
         <label className={styles.topLineLabel}>
           <input
             type="text"
-            id="addPlan"
             placeholder="Add new plan"
-            className={styles.topLineInput}
+            className={styles.addPlanInput}
             value={newPlan}
             onChange={(e) => setNewPlan(e.target.value)}
             onKeyDown={(e) => handleKeyPress(e, "Enter", addNewPlan)}
@@ -129,8 +128,8 @@ function Plans() {
           <input
             type="search"
             name="search"
-            id="search"
             placeholder="Search.."
+            className={styles.addPlanInput}
             onChange={handleSearchInput}
           />
         </label>
@@ -154,7 +153,7 @@ function Plans() {
           ))
         ) : (
           <div className={styles.emptyDiv}>
-            <img src={emptyIcon} alt="Empty" />
+            <img src={emptyIcon} className={styles.emptyIconImg} alt="Empty" />
             No plans found.
           </div>
         )}

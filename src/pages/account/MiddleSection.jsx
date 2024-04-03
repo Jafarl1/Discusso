@@ -1,4 +1,4 @@
-import Plans from "./Plans";
+import Plans from "./plans/Plans";
 import Books from "./Books";
 import Projects from "./Projects";
 
@@ -15,7 +15,7 @@ function MiddleSection({ contentId }) {
       ) : contentId === "projects" ? (
         <Projects />
       ) : (
-        <h2> Hello !</h2>
+        <h2 className={styles.middleContentH2}> Hello !</h2>
       )}
     </section>
   );

@@ -7,7 +7,7 @@
   align-items: center;
   gap: 30px;
 
-  h2 {
+  .notFoundH2 {
     font-size: 28px;
     color: var(--purple);
     font-weight: 500;

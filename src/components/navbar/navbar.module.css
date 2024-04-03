@@ -1,9 +1,9 @@
 .navbar {
-  ul {
+  .navbarUl {
     display: flex;
     gap: 15px;
 
-    li {
+    .navbarLi {
       height: 100%;
       padding: 5px;
       display: flex;
@@ -12,12 +12,12 @@
       cursor: pointer;
       font-size: 1.2rem;
 
-      a {
+      .navLink {
         height: 22px;
         font-weight: 500;
         color: var(--purple);
 
-        img {
+        .navLinkImg {
           height: 100%;
         }
       }

@@ -4,56 +4,102 @@ function Form(props) {
   return props.signin ? (
     <form
       // autoComplete="off"
-      id="sign-in-form"
+      id={styles.signInForm}
       onSubmit={props.handleSubmit}
     >
-      <h2>Log in</h2>
-      <label htmlFor="userEmail">
+      <h2 className={styles.signFormH2}>Log in</h2>
+      <label htmlFor="userEmail" className={styles.signFormLabel}>
         E-mail
-        <input type="email" id="userEmail" required />
+        <input
+          type="email"
+          className={styles.signFormInput}
+          id="userEmail"
+          required
+        />
       </label>
-      <label htmlFor="userPassword">
+      <label htmlFor="userPassword" className={styles.signFormLabel}>
         Password
-        <input type="password" id="userPassword" required />
+        <input
+          type="password"
+          className={styles.signFormInput}
+          id="userPassword"
+          required
+        />
       </label>
       <div className={styles.buttonsGroup}>
-        <button type="submit">Sign In</button>
+        <button type="submit" className={styles.signFormBtn}>
+          Sign In
+        </button>
       </div>
     </form>
   ) : (
     <form
       // autoComplete="off"
-      id="sign-up-form"
+      id={styles.signUpForm}
       onSubmit={props.handleSubmit}
     >
-      <h2>Create an account</h2>
-      <label htmlFor="userName">
+      <h2 className={styles.signFormH2}>Create an account</h2>
+      <label htmlFor="userName" className={styles.signFormLabel}>
         Name
-        <input type="text" id="userName" required />
+        <input
+          type="text"
+          className={styles.signFormInput}
+          id="userName"
+          required
+        />
       </label>
-      <label htmlFor="userSurname">
+      <label htmlFor="userSurname" className={styles.signFormLabel}>
         Surname
-        <input type="text" id="userSurname" required />
+        <input
+          type="text"
+          className={styles.signFormInput}
+          id="userSurname"
+          required
+        />
       </label>
-      <label htmlFor="userEmail">
+      <label htmlFor="userEmail" className={styles.signFormLabel}>
         E-mail
-        <input type="email" id="userEmail" required />
+        <input
+          type="email"
+          className={styles.signFormInput}
+          id="userEmail"
+          required
+        />
       </label>
-      <label htmlFor="userBirthday">
+      <label htmlFor="userBirthday" className={styles.signFormLabel}>
         Birthday date
-        <input type="date" id="userBirthday" required />
+        <input
+          type="date"
+          className={styles.signFormInput}
+          id="userBirthday"
+          required
+        />
       </label>
-      <label htmlFor="userPassword">
+      <label htmlFor="userPassword" className={styles.signFormLabel}>
         Password
-        <input type="password" id="userPassword" required />
+        <input
+          type="password"
+          className={styles.signFormInput}
+          id="userPassword"
+          required
+        />
       </label>
-      <label htmlFor="confirmPassword">
+      <label htmlFor="confirmPassword" className={styles.signFormLabel}>
         Confirm password
-        <input type="password" id="confirmPassword" required />
+        <input
+          type="password"
+          className={styles.signFormInput}
+          id="confirmPassword"
+          required
+        />
       </label>
       <div className={styles.buttonsGroup}>
-        <button type="button">Cancel</button>
-        <button type="submit">Sign Up</button>
+        <button type="button" className={styles.signFormBtn}>
+          Cancel
+        </button>
+        <button type="submit" className={styles.signFormBtn}>
+          Sign Up
+        </button>
       </div>
     </form>
   );
